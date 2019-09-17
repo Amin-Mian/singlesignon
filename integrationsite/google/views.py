@@ -12,3 +12,11 @@ def index(request):
         'logged_in': False,
     }
     return HttpResponse(template.render(context, request))
+
+
+def userprofile(request):
+    template = loader.get_template('google/index.html')
+    context = {
+        'logged_in': True,
+    }
+    return HttpResponse(template.render(context, request))

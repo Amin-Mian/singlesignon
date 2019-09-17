@@ -18,7 +18,9 @@ from django.urls import include, path
 import google
 
 urlpatterns = [
+    path('api/v1/', include('social_django.urls', namespace='social')),
     path('admin/', admin.site.urls),
     path('google/', include('google.urls')),
-    path('', google.views.index)
+    path('', google.views.index),
+    path('accounts/profile/', google.views.userprofile),
 ]
